@@ -1,22 +1,72 @@
 * {
     font: "JetBrainsMono Nerd Font 11";
+    bg: #121212;
+    panel: #1a1a1a;
+    sel: #2a2a2a;
+    fg: #e6e6e6;
+    muted: #a8a8a8;
+    background-color: @bg;
+    text-color: @fg;
 }
 
 window {
-    width: 1000px;
+    width: 1600px;
     border-radius: 10px;
+    background-color: @bg;
+}
+
+mainbox {
+    padding: 12px;
+    background-color: @bg;
+    children: [ inputbar, message, listview ];
+}
+
+inputbar {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: @panel;
+    text-color: @fg;
+}
+
+prompt {
+    text-color: @muted;
+}
+
+entry {
+    text-color: @fg;
+}
+
+message {
+    padding: 6px 2px;
+    background-color: transparent;
+    text-color: @muted;
 }
 
 listview {
     columns: 2;
-    spacing: 12px;
+    spacing: 10px;
+    background-color: @bg;
 }
 
 element {
     padding: 8px;
-    border-radius: 6px;
+    border-radius: 8px;
+    background-color: @panel;
+    text-color: @fg;
 }
 
-element.selected {
-    background-color: #3a3a3a;
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element selected {
+    background-color: @sel;
+}
+
+/* section headers (nonselectable rows) */
+element.disabled {
+    background-color: transparent;
+    text-color: @muted;
+    padding: 10px 6px 6px 6px;
 }
